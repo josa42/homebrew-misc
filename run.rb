@@ -9,17 +9,17 @@ class Run < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_arm64.tar.gz"
-      sha256 "d0ce949798e73524204d98f9d1177e88a739ff5df08d008bb46ce82d98a89436"
+    if Hardware::CPU.intel?
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_x86_64.tar.gz"
+      sha256 "164b2bcc39fbfc7e0b4ce06f07b38ea33241b8429b42c23d838ac56a7ff0b563"
 
       def install
         bin.install "run"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "b4280ac51151a073f34ef8d45252dbf6a7bdc373725387443e507c4901f0ef7c"
+    if Hardware::CPU.arm?
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_arm64.tar.gz"
+      sha256 "c72c5180b7accc7c9a1be57575798469d928524239db72d392996d5353c16d26"
 
       def install
         bin.install "run"
@@ -30,7 +30,7 @@ class Run < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_arm64.tar.gz"
-      sha256 "342f90f7e1e9df48252323f9fb10b80511a2dd4e2f5f3193b29762c940330782"
+      sha256 "fe98df754bfd24ba29640ccfc331ddbab765ded091471f805812caf4ccc2472d"
 
       def install
         bin.install "run"
@@ -38,7 +38,7 @@ class Run < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "49f75961655b43859e4934b0c44e4098116268ec98785ce830efc2d42795071d"
+      sha256 "ee03e141f05293ca0c2d290debb37196c6b8bf78b270908f8a87fdab8440fdff"
 
       def install
         bin.install "run"
