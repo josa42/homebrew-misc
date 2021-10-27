@@ -5,21 +5,21 @@
 class Run < Formula
   desc ""
   homepage "https://github.com/josa42/run"
-  version "0.1.0"
+  version "0.1.0-rc.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_arm64.tar.gz"
-      sha256 "31c646f8f87f6611ec0f780db12ce25c77c53a5a10f3b15bc2ddfe1fa8af0339"
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.1/run_0.1.0-rc.1_Darwin_arm64.tar.gz"
+      sha256 "dc4bc82b391ffeb5c3613c79b0caadc520cd8c36193829af99ecac5a15930dfd"
 
       def install
         bin.install "run"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "6de19f3bbc58888cc94863c48e0c42a35789ba90d7d37a8cfd329eb2ed7fbdcc"
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.1/run_0.1.0-rc.1_Darwin_x86_64.tar.gz"
+      sha256 "e2d9ba2cf5b27df119b07f0173b0acb869b3f7c47a4dc8606549494a45777769"
 
       def install
         bin.install "run"
@@ -28,17 +28,17 @@ class Run < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_arm64.tar.gz"
-      sha256 "bc767c8ff05a97891086f2767898dd5be9142ed11f2c74488e0c89b7d3026c0e"
+    if Hardware::CPU.intel?
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.1/run_0.1.0-rc.1_Linux_x86_64.tar.gz"
+      sha256 "daa5a5f1b83ab847a320368aa073453d2cd9293b2ac0bedd8a197a30b282a22f"
 
       def install
         bin.install "run"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "be4b0546c3dd1cbb6d41eebd3b60ee88009e577078a7fec8dbe5f1c1de54d643"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.1/run_0.1.0-rc.1_Linux_arm64.tar.gz"
+      sha256 "481606fb8463f28ac153e8d2b43aa983ec41acee251e79106d2b7d358c4fd112"
 
       def install
         bin.install "run"
