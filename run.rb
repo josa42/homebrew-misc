@@ -11,7 +11,7 @@ class Run < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "164b2bcc39fbfc7e0b4ce06f07b38ea33241b8429b42c23d838ac56a7ff0b563"
+      sha256 "d5a6fc5b83e5fef95477fcea485e00b63e4f58a043686820dfa20d5f65212244"
 
       def install
         bin.install "run"
@@ -19,7 +19,7 @@ class Run < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_arm64.tar.gz"
-      sha256 "c72c5180b7accc7c9a1be57575798469d928524239db72d392996d5353c16d26"
+      sha256 "df35c73ead687b48adf01a0b0ce7331a5de2670b896252fa7177787f73090609"
 
       def install
         bin.install "run"
@@ -28,17 +28,17 @@ class Run < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_arm64.tar.gz"
-      sha256 "fe98df754bfd24ba29640ccfc331ddbab765ded091471f805812caf4ccc2472d"
+    if Hardware::CPU.intel?
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_x86_64.tar.gz"
+      sha256 "cff83827a55eb630f187e8788b973f82b9f278bea81ce7dffd3fcc3f468e4f77"
 
       def install
         bin.install "run"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "ee03e141f05293ca0c2d290debb37196c6b8bf78b270908f8a87fdab8440fdff"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_arm64.tar.gz"
+      sha256 "6e53ac0dd4412869fd056f437e725f9065082807f7933e867023a604c784a5b2"
 
       def install
         bin.install "run"
