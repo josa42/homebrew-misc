@@ -5,21 +5,21 @@
 class Run < Formula
   desc ""
   homepage "https://github.com/josa42/run"
-  version "0.1.0-rc.1"
+  version "0.1.0-rc.2"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.1/run_0.1.0-rc.1_Darwin_arm64.tar.gz"
-      sha256 "dc4bc82b391ffeb5c3613c79b0caadc520cd8c36193829af99ecac5a15930dfd"
+    if Hardware::CPU.intel?
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.2/run_0.1.0-rc.2_Darwin_x86_64.tar.gz"
+      sha256 "4a3c76d52381e73f11c58d7b529805a35650322d446de141a5d2623ec77a6eb0"
 
       def install
         bin.install "run"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.1/run_0.1.0-rc.1_Darwin_x86_64.tar.gz"
-      sha256 "e2d9ba2cf5b27df119b07f0173b0acb869b3f7c47a4dc8606549494a45777769"
+    if Hardware::CPU.arm?
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.2/run_0.1.0-rc.2_Darwin_arm64.tar.gz"
+      sha256 "a73af792bd916273226e865a66d412f6c29915bc02a797e3478a57046fb6cd2f"
 
       def install
         bin.install "run"
@@ -28,17 +28,17 @@ class Run < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.1/run_0.1.0-rc.1_Linux_x86_64.tar.gz"
-      sha256 "daa5a5f1b83ab847a320368aa073453d2cd9293b2ac0bedd8a197a30b282a22f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.2/run_0.1.0-rc.2_Linux_arm64.tar.gz"
+      sha256 "5425656b4a464937c5550c55a19bcb677c23c911a8e209a5f465b6bf7a36b4e2"
 
       def install
         bin.install "run"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.1/run_0.1.0-rc.1_Linux_arm64.tar.gz"
-      sha256 "481606fb8463f28ac153e8d2b43aa983ec41acee251e79106d2b7d358c4fd112"
+    if Hardware::CPU.intel?
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.2/run_0.1.0-rc.2_Linux_x86_64.tar.gz"
+      sha256 "11131089c07f6051384e53ca9d828b05044bd06aab5e1b9458adc5770b9edc3e"
 
       def install
         bin.install "run"
