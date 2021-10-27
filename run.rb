@@ -9,17 +9,17 @@ class Run < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "d5a6fc5b83e5fef95477fcea485e00b63e4f58a043686820dfa20d5f65212244"
+    if Hardware::CPU.arm?
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_arm64.tar.gz"
+      sha256 "31c646f8f87f6611ec0f780db12ce25c77c53a5a10f3b15bc2ddfe1fa8af0339"
 
       def install
         bin.install "run"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_arm64.tar.gz"
-      sha256 "df35c73ead687b48adf01a0b0ce7331a5de2670b896252fa7177787f73090609"
+    if Hardware::CPU.intel?
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_x86_64.tar.gz"
+      sha256 "6de19f3bbc58888cc94863c48e0c42a35789ba90d7d37a8cfd329eb2ed7fbdcc"
 
       def install
         bin.install "run"
@@ -28,17 +28,17 @@ class Run < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "cff83827a55eb630f187e8788b973f82b9f278bea81ce7dffd3fcc3f468e4f77"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_arm64.tar.gz"
+      sha256 "bc767c8ff05a97891086f2767898dd5be9142ed11f2c74488e0c89b7d3026c0e"
 
       def install
         bin.install "run"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_arm64.tar.gz"
-      sha256 "6e53ac0dd4412869fd056f437e725f9065082807f7933e867023a604c784a5b2"
+    if Hardware::CPU.intel?
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_x86_64.tar.gz"
+      sha256 "be4b0546c3dd1cbb6d41eebd3b60ee88009e577078a7fec8dbe5f1c1de54d643"
 
       def install
         bin.install "run"
