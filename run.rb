@@ -5,21 +5,21 @@
 class Run < Formula
   desc ""
   homepage "https://github.com/josa42/run"
-  version "0.1.0-rc.2"
+  version "0.1.0-rc.3"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.2/run_0.1.0-rc.2_Darwin_x86_64.tar.gz"
-      sha256 "4a3c76d52381e73f11c58d7b529805a35650322d446de141a5d2623ec77a6eb0"
+    if Hardware::CPU.arm?
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.3/run_0.1.0-rc.3_Darwin_arm64.tar.gz"
+      sha256 "c5684be84ca33b058a19cba2ede6fada8a778ead00e9a369bf7e99372b295a7a"
 
       def install
         bin.install "run"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.2/run_0.1.0-rc.2_Darwin_arm64.tar.gz"
-      sha256 "a73af792bd916273226e865a66d412f6c29915bc02a797e3478a57046fb6cd2f"
+    if Hardware::CPU.intel?
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.3/run_0.1.0-rc.3_Darwin_x86_64.tar.gz"
+      sha256 "600a55c03581cc72e9f63b7e3b77dc5f27e3e138e080bba108ad68b50080c156"
 
       def install
         bin.install "run"
@@ -29,16 +29,16 @@ class Run < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.2/run_0.1.0-rc.2_Linux_arm64.tar.gz"
-      sha256 "5425656b4a464937c5550c55a19bcb677c23c911a8e209a5f465b6bf7a36b4e2"
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.3/run_0.1.0-rc.3_Linux_arm64.tar.gz"
+      sha256 "d7a09561fa17d1ab51f0ae935a4c40f352d4d809929b4a51dad74f102d713c23"
 
       def install
         bin.install "run"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.2/run_0.1.0-rc.2_Linux_x86_64.tar.gz"
-      sha256 "11131089c07f6051384e53ca9d828b05044bd06aab5e1b9458adc5770b9edc3e"
+      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.3/run_0.1.0-rc.3_Linux_x86_64.tar.gz"
+      sha256 "79b7230a50cccc54e73a6ae99798eea22df689a2fce3b73b39720aacd8ef665a"
 
       def install
         bin.install "run"
