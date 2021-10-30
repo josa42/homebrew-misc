@@ -5,21 +5,21 @@
 class Run < Formula
   desc ""
   homepage "https://github.com/josa42/run"
-  version "0.1.1"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/josa42/run/releases/download/v0.1.1/run_0.1.1_Darwin_arm64.tar.gz"
-      sha256 "5edbd55d96e8ab4524f1bd235a79799af7c735eb9aa80ed269ed4dc799d2524c"
+    if Hardware::CPU.intel?
+      url "https://github.com/josa42/run/releases/download/v0.2.0/run_0.2.0_Darwin_x86_64.tar.gz"
+      sha256 "b76f61dc8b46303606045bf2966679b155e6b98e3d4f6ce123625a4a6ee8986e"
 
       def install
         bin.install "run"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.1/run_0.1.1_Darwin_x86_64.tar.gz"
-      sha256 "ca9b083ea717cdda8428f24dcd487f9c00ce65c94cdc276a8262d91b8122fbc5"
+    if Hardware::CPU.arm?
+      url "https://github.com/josa42/run/releases/download/v0.2.0/run_0.2.0_Darwin_arm64.tar.gz"
+      sha256 "f1d0a3626dd6511644ffe82b5ead394d505c0d0935961b0e384ad92a7ccf3fcc"
 
       def install
         bin.install "run"
@@ -29,22 +29,20 @@ class Run < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josa42/run/releases/download/v0.1.1/run_0.1.1_Linux_arm64.tar.gz"
-      sha256 "93d5bba8cc988146c5bbae1a544a5853ac0c4d8e57a59c4483bddfdbce7ae6db"
+      url "https://github.com/josa42/run/releases/download/v0.2.0/run_0.2.0_Linux_arm64.tar.gz"
+      sha256 "8c81b197ed9adb0e0586120d4527cb89dccc58c31e57b42c39408e3891790397"
 
       def install
         bin.install "run"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.1/run_0.1.1_Linux_x86_64.tar.gz"
-      sha256 "27a3de2310ed85869228221cc11bc1ecd64eee534bd538b209471aa4d32c0940"
+      url "https://github.com/josa42/run/releases/download/v0.2.0/run_0.2.0_Linux_x86_64.tar.gz"
+      sha256 "ebba7fcedb5ed99314b7b44bbde6d56bb84f5cfb77d92a284e03e1d0c420e3de"
 
       def install
         bin.install "run"
       end
     end
   end
-
-  depends_on "go" => :build
 end
