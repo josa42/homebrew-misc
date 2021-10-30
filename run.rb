@@ -5,21 +5,21 @@
 class Run < Formula
   desc ""
   homepage "https://github.com/josa42/run"
-  version "0.1.0-rc.3"
+  version "0.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.3/run_0.1.0-rc.3_Darwin_arm64.tar.gz"
-      sha256 "c5684be84ca33b058a19cba2ede6fada8a778ead00e9a369bf7e99372b295a7a"
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_arm64.tar.gz"
+      sha256 "990333feedf9230c3ffac718202fd455ed57ee8e06c8c33f776930d3c4ac472f"
 
       def install
         bin.install "run"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.3/run_0.1.0-rc.3_Darwin_x86_64.tar.gz"
-      sha256 "600a55c03581cc72e9f63b7e3b77dc5f27e3e138e080bba108ad68b50080c156"
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Darwin_x86_64.tar.gz"
+      sha256 "e7257924562cefecbc5b37318727dfb4179f21e7cce69bd796530dbc694fd5eb"
 
       def install
         bin.install "run"
@@ -29,16 +29,16 @@ class Run < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.3/run_0.1.0-rc.3_Linux_arm64.tar.gz"
-      sha256 "d7a09561fa17d1ab51f0ae935a4c40f352d4d809929b4a51dad74f102d713c23"
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_arm64.tar.gz"
+      sha256 "082e2a949f77ee9c7f32a86383fc49f1efd8139c82064f96a810bf41e8f5895d"
 
       def install
         bin.install "run"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/josa42/run/releases/download/v0.1.0-rc.3/run_0.1.0-rc.3_Linux_x86_64.tar.gz"
-      sha256 "79b7230a50cccc54e73a6ae99798eea22df689a2fce3b73b39720aacd8ef665a"
+      url "https://github.com/josa42/run/releases/download/v0.1.0/run_0.1.0_Linux_x86_64.tar.gz"
+      sha256 "7d5eddb492dce4daca11fdab3c32e8b7ea2b5a760776176868b4ed3b5eb2359f"
 
       def install
         bin.install "run"
